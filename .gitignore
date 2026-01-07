@@ -10,6 +10,7 @@ __pycache__/
 
 # Vector store artifacts
 data/vector_store/
+data/policies/
 
 # IDE
 .vscode/
@@ -17,5 +18,5 @@ data/vector_store/
 data/*
 !data/.gitkeep
 
-data/policies/
+
 
