@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# OS
+.DS_Store
+
+# Vector store artifacts
+data/vector_store/
+
+# IDE
+.vscode/
+
+data/*
+!data/.gitkeep
