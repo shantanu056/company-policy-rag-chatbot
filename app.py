@@ -1,13 +1,3 @@
-# app.py
-
-"""
-Streamlit Chat UI for Company Policy RAG Chatbot
-Uses:
-- TF-IDF embeddings
-- Cosine similarity retrieval
-- Rule-based RAG (no LLM, fully free)
-"""
-
 import streamlit as st
 from pathlib import Path
 
@@ -15,6 +5,7 @@ from pipeline.vector_db import VectorStore
 from pipeline.embedder import TfidfEmbedder
 from pipeline.retriever import PolicyRetriever
 from pipeline.rag_chain import RuleBasedRAG
+from pipeline.groq_rag_chain import GroqRAGChain
 
 
 # ---------------- UI CONFIG ----------------
@@ -33,7 +24,10 @@ def load_rag_components():
     store.load()
 
     retriever = PolicyRetriever(store, embedder)
-    rag = RuleBasedRAG()
+
+    # Choose RAG implementation
+    # rag = RuleBasedRAG()   # fallback(without LLM)
+    rag = GroqRAGChain()     # Groq + LLaMA 3.1
 
     return retriever, rag
 

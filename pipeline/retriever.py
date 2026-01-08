@@ -1,8 +1,3 @@
-"""
-Retriever abstraction
-Wraps the vector store search into a clean retriever interface.
-"""
-
 from typing import List
 from langchain_core.documents import Document
 
